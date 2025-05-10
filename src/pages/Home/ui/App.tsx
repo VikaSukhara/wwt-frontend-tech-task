@@ -4,6 +4,12 @@ import { useTranslation } from 'react-i18next'
 
 import { AnimatePresence } from 'framer-motion'
 
+import { FilterType } from '@/shared/api/types/Filter'
+import {
+	SearchRequestFilter,
+	SearchRequestOptions
+} from '@/shared/api/types/SearchRequest/SearchRequestFilter'
+
 import Filter from './Components/Filter'
 import Modal from './Components/Modal'
 import { useFilterStore } from './store/filterStore'
@@ -20,6 +26,16 @@ export const App = () => {
 	const toggleModal = () => {
 		setIsModalOpen(!isModalOpen)
 	}
+
+	const mappedFilters: SearchRequestFilter = Object.entries(selectedFilters)
+		.filter(([, options]) => options.length > 0)
+		.map(
+			([id, optionsIds]): SearchRequestOptions => ({
+				id,
+				type: FilterType.OPTION,
+				optionsIds
+			})
+		)
 
 	return (
 		<section className="w-full h-dvh flex flex-col items-center justify-center gap-4">
@@ -114,6 +130,9 @@ export const App = () => {
 								</span>
 							))
 						)}
+						<pre className="mt-8 p-4 bg-gray-100 rounded w-[700px] text-left text-sm text-gray-800 overflow-auto">
+							{JSON.stringify(mappedFilters, null, 2)}
+						</pre>
 					</div>
 				) : (
 					<p className="text-4xl text-black">{t('paragraphWithoutFilters')}</p>

@@ -17,7 +17,7 @@ type LocalizedOption = Omit<FilterChooseOption, 'id'>
 interface LocalizedFilter {
 	name: string
 	description?: string
-	options: Record<string, LocalizedOption> // ключ — це id (наприклад, "breakfast")
+	options: Record<string, LocalizedOption>
 }
 
 interface FilterData {

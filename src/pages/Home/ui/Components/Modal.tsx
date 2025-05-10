@@ -50,8 +50,8 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
 				className="relative bg-white rounded-2xl w-[90%] max-w-[1280px] max-h-[90%] overflow-y-auto pt-10 pb-10 pl-8 pr-8"
 				onClick={e => e.stopPropagation()}
 				initial={{ opacity: 0, scale: 0.8 }}
-				animate={{ opacity: 1, scale: 1 }} // when is open
-				exit={{ opacity: 0, scale: 0.8 }} //when is close
+				animate={{ opacity: 1, scale: 1 }}
+				exit={{ opacity: 0, scale: 0.8 }}
 				transition={{ duration: 0.3, ease: 'easeOut' }}
 			>
 				<button

@@ -29,3 +29,21 @@ Additionally used:
 - react-hot-toast — for displaying confirmation or error messages when the user applies filters
 
 - lodash — used to convert option IDs to camelCase (e.g., 'pets-allowed' → 'petsAllowed') for matching translation keys.
+
+## Screenshots
+
+### Homepage with filter button
+
+![Homepage with filter button](./src/screenshots/homepagep-without-filterData.png)
+
+### Filter modal window
+
+![Filter modal window](./src/screenshots/filter-modal.png)
+
+### Confirmation modal window
+
+![Confirmation modal window](./src/screenshots/confirmation-modal.png)
+
+### Displaying filter data on the homepage
+
+![Filter data on the homepage](./src/screenshots/homepage-with-filterData.png)

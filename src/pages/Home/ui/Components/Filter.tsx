@@ -48,8 +48,8 @@ const Filter = ({ onClose }: { onClose: () => void }) => {
 	}
 
 	const handleCancel = () => {
-		resetDraft() // скидаємо зміни
-		setIsConfirmationOpen(false) // тільки закриває підтвердження
+		resetDraft()
+		setIsConfirmationOpen(false)
 		onClose()
 		toast.success(t('successNotification'), {
 			className: 'border border-[#FF5F00] p-[16px] text-[#FF5F00]',
