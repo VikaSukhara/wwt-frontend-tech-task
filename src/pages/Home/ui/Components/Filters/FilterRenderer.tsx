@@ -25,7 +25,9 @@ interface FilterData {
 }
 
 const fetchFilterData = async (): Promise<FilterData> => {
-	const response = await fetch('src/shared/temp/filterData.json')
+	const response = await fetch(
+		import.meta.env.BASE_URL + 'shared/temp/filterData.json'
+	)
 
 	if (!response.ok) {
 		throw new Error('Failed to fetch filter data')
