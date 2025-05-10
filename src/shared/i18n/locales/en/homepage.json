@@ -1,0 +1,7 @@
+{
+	"title": "WinWinTravel frontend test task",
+	"buttonText": "Choose a filter",
+	"paragraphWithFilters": "Your filters:",
+	"paragraphWithoutFilters": "You have no filter.",
+	"paragraphForJSON": "JSON format:"
+}

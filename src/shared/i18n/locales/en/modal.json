@@ -1,0 +1,11 @@
+{
+	"modalTitle": "Filter",
+	"modalBtn": "Apply",
+	"clearBtn": "Clear all parameters",
+	"loading": "Loading filters...",
+	"error": "Error loading filters",
+	"noFilters": "No filters available",
+	"successNotification": "Filter applied successfully",
+	"clearNotification": "All parameters cleared",
+	"noFiltersSelected": "No filters selected"
+}
