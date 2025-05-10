@@ -38,7 +38,7 @@ export const App = () => {
 		)
 
 	return (
-		<section className="w-full h-dvh flex flex-col items-center justify-center gap-4">
+		<section className="w-full min-h-screen overflow-y-auto flex flex-col items-center justify-center gap-4 p-5">
 			<h1 className="text-6xl text-gray-600 mb-[50px]">{t('title')}</h1>
 			<div className="flex flex-col items-start justify-center gap-5 w-[700px]">
 				{' '}
