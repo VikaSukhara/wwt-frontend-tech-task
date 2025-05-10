@@ -1,38 +1,20 @@
 # WinWinTravel
 
-## Task
+A filter modal window was implemented based on the provided filterData.json and Figma design. Code is fully typed with TypeScript.
 
-### What needs to be done
+The modal opens via a button on the homepage.
+If the user has previously selected filter options, they are pre-filled in the modal.
 
-The API provides filter data located in the file `filterData.json`
+When clicking the Apply button a confirmation modal window appears.
+If the user confirms — the new selections are saved to the global state (using Zustand). If the user cancels — the previous values remain unchanged. Selected filter data is displayed on the homepage in JSON.
 
-Based on this data, create a filter modal window — [Figma design](https://www.figma.com/file/cnBVURUTntc8peGEfKexoY/WWT-Test-task?type=design&node-id=0%3A1&mode=design&t=GZ0EY5BJ6KB7iy02-1)
+i18n is used for localization. System messages (loading, error, etc.) are stored in modal.json/homepage.json/confirmationForm.json, filter translations in filter.json.
 
-The design should closely follow the layout. If indentations differ slightly in the layout — make them consistent across the modal
+A GitHub Action is included for automatic code validation.
 
-The modal window should be opened via a button on the homepage
+Technologies Used
 
-When opening the filter modal, if the user has already selected some data previously, it should be pre-filled in the modal
-
-The user should be able to modify the data and click the `Apply` button. This action should open a confirmation dialog
-
-- If the user confirms the changes — the selected data should be saved to the global state (`App`)
-- If the user cancels — keep the previously saved data without applying the new changes
-
-Display the current selected filter data on the homepage in JSON format (no design required, just for debug/visibility)
-
-The project must include a GitHub Action that automatically checks the code
-
-Types:
-
-- `FilterItem` — input data format from API / `filterData.json`
-- `SearchRequestFilter` — output data format to be displayed on the homepage
-
-### What technologies to use
-
-Required:
-
-- Git with `Conventional Commits`
+- Git
 - Semantic HTML layout
 - React
 - react-query
@@ -40,54 +22,10 @@ Required:
 - i18n
 - zustand
 
-You may use other technologies already installed in the project, or install additional ones if needed
+Additionally used:
 
-If you install any new technology, describe why you added it and what it’s used for in some file
+- framer-motion — for smooth modal and confirmation windows animations.
 
-### How to submit the task
+- react-hot-toast — for displaying confirmation or error messages when the user applies filters
 
-- Create a **public** copy(not fork) of the repository, preserving the full commit history
-- Complete the task in this private repository
-- Inform HR that the task is complete and ready for review
-
-Also, please let us know upfront whether you would like detailed feedback (what exactly was wrong and a score), or if a simple acceptance or rejection response is sufficient
-
-## How to set up the project
-
-All scripts described below (except for _**dependency installation**_) can be used with pnpm instead of npm. They work the same way
-
-### Installing dependencies
-
-After downloading the project's source code, you need to install the dependencies. To do this, you can use the following command:
-
-```shell
-pnpm i
-# or
-pnpm install
-```
-
-### Run
-
-To start the project for development, use the script `dev`:
-
-```shell
-npm run dev
-```
-
-This script automatically refreshes the page after you make changes in the code and works quickly with `vite`.
-
-### Build
-
-To compile the project, use the script `build`:
-
-```shell
-npm run build
-```
-
-After executing this script, you will have a folder `dist` in which the project's output files will be located, which can be uploaded to hosting.
-
-Also, to see how the compiled version of the program looks, you can use the script `preview`.
-
-```shell
-npm run preview
-```
+- lodash — used to convert option IDs to camelCase (e.g., 'pets-allowed' → 'petsAllowed') for matching translation keys.
