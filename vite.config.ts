@@ -3,6 +3,7 @@
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 import svgr from 'vite-plugin-svgr'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
@@ -25,7 +26,10 @@ export default defineConfig(() => ({
 			include: '**/*.svg'
 		}),
 		tsconfigPaths(),
-		tailwindcss()
+		tailwindcss(),
+		viteStaticCopy({
+			targets: [{ src: 'src/shared/temp/filterData.json', dest: 'shared/temp' }]
+		})
 	],
 
 	test: {
